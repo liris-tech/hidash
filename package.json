@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "description": "High-level equivalent to lodash.",
   "scripts": {
+    "test": "node test/run-tests.js"
   },
   "main":  "index.js",
   "repository": {
