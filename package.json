@@ -1,0 +1,22 @@
+{
+  "name": "hidash",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "High-level equivalent to lodash.",
+  "scripts": {
+  },
+  "main":  "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liris-tech/hidash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liris-tech/hidash/issues"
+  },
+  "homepage": "https://github.com/liris-tech/hidash#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
