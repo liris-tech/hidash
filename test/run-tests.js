@@ -1,5 +1,7 @@
 import { diffTest } from './diff.test.js';
 
+import { selectLinesTest } from './selectLines.test.js';
+
 import { makeFileStructureTest } from './makeFileStructure.test.js';
 import { isDirTest } from './isDir.test.js';
 import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
@@ -13,8 +15,8 @@ import _ from 'lodash';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest,
-    mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest, walkDirTest];
+const functionsToTest = [diffTest, selectLinesTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest,
+    isDirEmptyTest, mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest, walkDirTest];
 
 export function runTests() {
     const allTests = [];
