@@ -10,7 +10,7 @@ export function diffTest() {
                 [],
                 []
             ),
-            expectedResult: [
+            expected: [
                 [],
                 []
             ]
@@ -21,7 +21,7 @@ export function diffTest() {
                 ['a', 2, true],
                 [2, true, 'hello']
             ),
-            expectedResult: [
+            expected: [
                 ['a'],
                 ['hello']
             ]
@@ -32,7 +32,7 @@ export function diffTest() {
                 [{a: 1}, {b: {c: 'hi'}}, {d: {e: {f: 3}}}],
                 [{a: 2}, {b: {c: 'hi'}}, {d: {e: {f: 4}}}, {g: 5}]
             ),
-            expectedResult: [
+            expected: [
                 [{a: 1}, {d: {e: {f: 3}}}],
                 [{a: 2}, {d: {e: {f: 4}}}, {g: 5}]
             ]
@@ -43,7 +43,7 @@ export function diffTest() {
                 [[1, 2, 3], [3, [4, 5]]],
                 [[1, 2, 3], [3, [4, 5]], [3, [4, 6]]]
             ),
-            expectedResult: [
+            expected: [
                 [],
                 [[3, [4, 6]]]
             ]
@@ -54,7 +54,7 @@ export function diffTest() {
                 ['a', {b: 'c'}, ['d', 0, true], {f: ['g', {h: 42}]}],
                 ['b', {a: 'c'}, ['d', 0, 0], {f: ['g', {h: 42}]}]
             ),
-            expectedResult: [
+            expected: [
                 ['a', {b: 'c'}, ['d', 0, true]],
                 ['b', {a: 'c'}, ['d', 0, 0]]
             ]

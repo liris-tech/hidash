@@ -4,36 +4,42 @@ import _ from 'lodash';
 
 // =====================================================================================================================
 
-export function runTests() {
-    const allTests = [diffTest];
-    const allTestResults = [];
+const functionsToTest = [diffTest];
 
-    for (const test of allTests) {
-        for (const {description, result, expectedResult} of test()) {
-            if (_.isEqual(result, expectedResult)) {
-                allTestResults.push({
+export function runTests() {
+    const allTests = [];
+
+    for (const test of functionsToTest) {
+        for (const {description, result, expected} of test()) {
+            if (_.isEqual(result, expected)) {
+                allTests.push({
                     description,
                     passes: true
                 });
             } else {
-                allTestResults.push({
+                allTests.push({
                     description,
                     passes: false,
                     result,
-                    expectedResult
+                    expected
                 });
             }
         }
     }
 
-    for (const result of allTestResults) {
-        if (result.passes) {
-            console.log(`${result.description}: passes`);
+    const descriptionMaxLength = _(allTests).map(t => t.description.length).max();
+
+    for (const test of allTests) {
+        const nDashes = descriptionMaxLength - test.description.length + 10;
+        const dashes = _.repeat('-', nDashes);
+
+        if (test.passes) {
+            console.log(`${test.description}: ${dashes} passes`);
         }
         else {
-            console.log(`${result.description}: fails`);
-            console.log(`--- result: ${JSON.stringify(result.result)}`);
-            console.log(`--- expected result: ${JSON.stringify(result.expectedResult)}`);
+            console.log(`${test.description}: ${dashes} FAILS`);
+            console.log(`--- result: ${JSON.stringify(test.result)}`);
+            console.log(`--- expected result: ${JSON.stringify(test.expected)}`);
         }
     }
 }
