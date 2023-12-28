@@ -4,12 +4,14 @@ import { makeFileStructureTest } from './makeFileStructure.test.js';
 import { isDirTest } from './isDir.test.js';
 import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
 import { isDirEmptyTest } from './isDirEmpty.test.js';
+import { mkdirIfNotExistsTest} from './mkdirIfNotExists.test.js';
 
 import _ from 'lodash';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest];
+const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest,
+    mkdirIfNotExistsTest];
 
 export function runTests() {
     const allTests = [];
