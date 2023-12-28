@@ -2,12 +2,13 @@ import { diffTest } from './diff.test.js';
 
 import { makeFileStructureTest } from './makeFileStructure.test.js';
 import { isDirTest } from './isDir.test.js';
+import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
 
 import _ from 'lodash';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest, makeFileStructureTest, isDirTest];
+const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest];
 
 export function runTests() {
     const allTests = [];
