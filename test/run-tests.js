@@ -3,6 +3,7 @@ import { diffTest } from './diff.test.js';
 import { makeFileStructureTest } from './makeFileStructure.test.js';
 import { isDirTest } from './isDir.test.js';
 import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
+import { getSubDirsTest } from './getSubDirs.test.js';
 import { isDirEmptyTest } from './isDirEmpty.test.js';
 import { mkdirIfNotExistsTest} from './mkdirIfNotExists.test.js';
 import { rmdirIfEmptyTest } from './rmdirIfEmpty.test.js';
@@ -12,7 +13,7 @@ import _ from 'lodash';
 // =====================================================================================================================
 
 const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest,
-    mkdirIfNotExistsTest, rmdirIfEmptyTest];
+    mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest];
 
 export function runTests() {
     const allTests = [];
