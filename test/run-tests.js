@@ -7,13 +7,14 @@ import { getSubDirsTest } from './getSubDirs.test.js';
 import { isDirEmptyTest } from './isDirEmpty.test.js';
 import { mkdirIfNotExistsTest} from './mkdirIfNotExists.test.js';
 import { rmdirIfEmptyTest } from './rmdirIfEmpty.test.js';
+import { walkDirTest } from './walkDir.test.js';
 
 import _ from 'lodash';
 
 // =====================================================================================================================
 
 const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest,
-    mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest];
+    mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest, walkDirTest];
 
 export function runTests() {
     const allTests = [];
