@@ -1,10 +1,12 @@
 import { diffTest } from './diff.test.js';
 
+import { makeFileStructureTest } from './makeFileStructure.test.js';
+
 import _ from 'lodash';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest];
+const functionsToTest = [diffTest, makeFileStructureTest];
 
 export function runTests() {
     const allTests = [];
