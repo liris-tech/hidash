@@ -5,13 +5,14 @@ import { isDirTest } from './isDir.test.js';
 import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
 import { isDirEmptyTest } from './isDirEmpty.test.js';
 import { mkdirIfNotExistsTest} from './mkdirIfNotExists.test.js';
+import { rmdirIfEmptyTest } from './rmdirIfEmpty.test.js';
 
 import _ from 'lodash';
 
 // =====================================================================================================================
 
 const functionsToTest = [diffTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest, isDirEmptyTest,
-    mkdirIfNotExistsTest];
+    mkdirIfNotExistsTest, rmdirIfEmptyTest];
 
 export function runTests() {
     const allTests = [];
