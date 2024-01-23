@@ -11,7 +11,7 @@ import fs from 'node:fs';
  * @category File system
  * @param {string} absPath The absolute path of the directory.
  * @param {Object} [options] Optional options.
- * @param {[RegExp]} [ignorePatterns] Array of patterns of subdirectories' (relative) name to be ignored.
+ * @param {Array} [ignorePatterns] Array of patterns of subdirectories' (relative) name to be ignored.
  * @param {boolean} [symlink] Should symlink subdirectories be returns?
  * @returns {boolean} Returns whether the directory has been removed.
  * @example

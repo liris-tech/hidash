@@ -15,9 +15,9 @@ import fs from 'node:fs';
  * @category File system
  * @param {string} [dirPath='.'] The absolute path of the directory.
  * @param {Object} [options] Optional options.
- * @param {[RegExp]} [ignorePatterns] Array of patterns of subdirectories' (relative) name to be ignored.
- * @param {boolean} [symlink] Should symlink subdirectories be returns?
- * @returns {[string]} Returns whether the directory is empty.
+ * @param {Array} [ignorePatterns] Regexp patterns of file system entries' (relative) name to be ignored.
+ * @param {boolean} [symlink] Should symlink subdirectories be taken into account?
+ * @returns {boolean} Returns whether the directory is empty.
  * @example
  *
  * // for a directory at /my/dir1 containing a file some-file and a directory /my/dir2 not containing anything:

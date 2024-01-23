@@ -8,10 +8,10 @@ import path from 'node:path';
 /**
  * Creates the file structure specified via a hiccup-style notation.
  *
- * @since 0.1.0
+ * @since 0.1.1
  * @category File system
- * @param {[*]} fileStructure The file structure to be created described with a hiccup-style notation.
- * @param {string} root The path at which to create the file structure.
+ * @param {Array} fileStructure The file structure to be created described with a hiccup-style notation.
+ * @param {string} dirPath The path at which to create the file structure.
  * @returns {boolean} Returns whether the file structure has been created.
  * @example
  *

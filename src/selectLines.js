@@ -12,7 +12,7 @@ import _ from 'lodash';
  * @param {number|RegExp|string|function} [options.from] From which line to start extracting.
  * @param {number|RegExp|string|function} [options.to] At which line to stop extracting.
  * @param {RegExp|string|function} [options.matches] Matching criteria to determine whether add the line to the results.
- * @returns {[string]} Returns the lines satisfying the extraction parameters.
+ * @returns {string[]} Returns the lines satisfying the extraction parameters.
  * @example
  *
  * const text=(

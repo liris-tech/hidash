@@ -15,9 +15,9 @@ import path from 'node:path';
  * @category File system
  * @param {string} [dirPath='.'] The path of the subdirectories parent.
  * @param {Object} [options] Optional options.
- * @param {[RegExp]} [ignorePatterns=[/^\.+/]] Patterns of subdirectories' (relative) name to be ignored.
- * @param {boolean} [symlink=true] Should symlink subdirectories be returns?
- * @returns {[string]} Returns an array of subdirectories.
+ * @param {RegExp[]} [ignorePatterns=[/^\.+/]] Regexp patterns of subdirectories' (relative) name to be ignored.
+ * @param {boolean} [symlink=true] Should symlink subdirectories be returned?
+ * @returns {Array} Returns an array of subdirectories.
  * @example
  *
  * // for a directory at /my/dir/path containing 2 subdirectories subDir1 and subDir2:

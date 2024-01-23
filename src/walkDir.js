@@ -22,9 +22,9 @@ const defaultOptions = {
  * @param {function} [callback=_.identity] The callback to be applied to each directory's path during the walk.
  * @param {Object} [options] Optional options.
  * @param {function} [options.isLeaf=(path) => !isDir(path)] Condition to stop walking down.
- * @param {[RegExp]} [options.ignorePatterns=[/^\.+/]] Patterns of subdirectories' (relative) name to be ignored.
+ * @param {Array} [options.ignorePatterns=[/^\.+/]] Regexp patterns of subdirectories' (relative) name to be ignored.
  * @param {boolean} [options.symlink=true] Should symlink subdirectories be walked?
- * @returns {[*]} Returns the result of applying the callback to each directory during the walk.
+ * @returns {Array} Returns the array of results from applying the callback to each directory during the walk.
  * @example
  *
  * // for directory structure:
