@@ -3,6 +3,7 @@ import { diffTest } from './diff.test.js';
 import { selectLinesTest } from './selectLines.test.js';
 
 import { makeFileStructureTest } from './makeFileStructure.test.js';
+import { matchesFileStructureTest } from './matchesFileStructure.test.js';
 import { isDirTest } from './isDir.test.js';
 import { isSymbolicLinkTest } from './isSymbolicLink.test.js';
 import { getSubDirsTest } from './getSubDirs.test.js';
@@ -17,8 +18,8 @@ import fs from 'node:fs';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest, selectLinesTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest,
-    isDirEmptyTest, mkdirIfNotExistsTest, rmdirIfEmptyTest, getSubDirsTest, walkDirTest];
+const functionsToTest = [diffTest, selectLinesTest, makeFileStructureTest, matchesFileStructureTest, isDirTest,
+    isSymbolicLinkTest, getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest, rmdirIfEmptyTest, walkDirTest];
 
 export function runTests() {
     const allTests = [];
