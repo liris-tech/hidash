@@ -35,8 +35,8 @@ export function isDirEmpty(dirPath='.', {ignorePatterns=[], symlink=true} = {}) 
     else {
         return !_(fs.readdirSync(dirPath))
             .filter(name => _.every(ignorePatterns, pat => !pat.test(name)))
-            .map(name => path.resolve(dirPath, name))
-            .filter(absPath => symlink || !isSymbolicLink(absPath))
+            .map(name => path.join(dirPath, name))
+            .filter(entryPath => symlink || !isSymbolicLink(entryPath))
             .size();
     }
 }
