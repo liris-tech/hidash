@@ -24,18 +24,12 @@ import path from 'node:path';
  *
  * // => Creates the self-explanatory file structure
  */
-export function makeFileStructure(fileStructure, root='.') {
-    const rootAbsPath = path.resolve(root);
-    createFilesAndDirs(fileStructure, rootAbsPath, rootAbsPath);
-}
-
-
-function createFilesAndDirs(fileStructure, rootAbsPath, currentAbsPath) {
+export function makeFileStructure(fileStructure, dirPath='.') {
     let itemAbsPath;
 
     for (const item of fileStructure) {
         if (_.isString(item)) {
-            itemAbsPath = path.resolve(currentAbsPath, item);
+            itemAbsPath = path.resolve(dirPath, item);
         }
         else if (_.isPlainObject(item)) {
             const options = item;
@@ -53,7 +47,7 @@ function createFilesAndDirs(fileStructure, rootAbsPath, currentAbsPath) {
 
         }
         else {
-            createFilesAndDirs(item, rootAbsPath, itemAbsPath);
+            makeFileStructure(item, itemAbsPath);
         }
     }
 }
