@@ -16,7 +16,7 @@ export function isSymbolicLinkTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'isSymbolicLink - playground/some-dir',
             result: isSymbolicLink('playground/some-dir'),
@@ -38,8 +38,4 @@ export function isSymbolicLinkTest() {
             expected: true,
         }
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

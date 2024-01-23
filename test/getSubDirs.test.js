@@ -22,7 +22,7 @@ export function getSubDirsTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'getSubDirs - playground',
             result: getSubDirs('playground').sort(),
@@ -69,8 +69,4 @@ export function getSubDirsTest() {
             expected: _.intersection(fs.readdirSync('.').map(p => path.resolve(p)), getSubDirs()).sort()
         }
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

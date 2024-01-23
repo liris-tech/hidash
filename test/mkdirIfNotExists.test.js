@@ -20,7 +20,7 @@ export function mkdirIfNotExistsTest() {
     const someFilePath = path.join('playground', 'some-file');
     const nonExistingDirPath = path.join('playground', 'non-existing-dir');
 
-    const tests = [
+    return [
         {
             description: 'mkdirIfNotExists - playground/some-dir',
             result: [mkdirIfNotExists(someDirPath), fs.existsSync(someDirPath)],
@@ -37,9 +37,4 @@ export function mkdirIfNotExistsTest() {
             expected: [true, true]
         },
     ];
-
-   fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }
-

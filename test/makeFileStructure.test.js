@@ -17,7 +17,7 @@ export function makeFileStructureTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'makeFileStructure - all path exist',
             result: [
@@ -60,8 +60,4 @@ export function makeFileStructureTest() {
             expected: ['42', '42']
         }
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

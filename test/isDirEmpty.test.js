@@ -16,7 +16,7 @@ export function isDirEmptyTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'isDirEmpty - playground',
             result: isDirEmpty('playground'),
@@ -56,8 +56,4 @@ export function isDirEmptyTest() {
             expected: false
         }
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

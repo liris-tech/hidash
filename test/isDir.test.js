@@ -16,7 +16,7 @@ export function isDirTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'isDir - playground',
             result: isDir('playground'),
@@ -24,22 +24,18 @@ export function isDirTest() {
         },
         {
             description: 'isDir - playground/some-file',
-            result: isDir('playground/some-file'),
+            result: isDir(path.join('playground', 'some-file')),
             expected: false,
         },
         {
             description: 'isDir - playground/symlink-to-some-dir',
-            result: isDir('playground/symlink-to-some-dir'),
+            result: isDir(path.join('playground', 'symlink-to-some-dir')),
             expected: true,
         },
         {
             description: 'isDir - playground/symlink-to-some-file',
-            result: isDir('playground/symlink-to-some-file'),
+            result: isDir(path.join('playground', 'symlink-to-some-file')),
             expected: false,
         }
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

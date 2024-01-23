@@ -16,7 +16,7 @@ export function walkDirTest() {
         ]
     );
 
-    const tests = [
+    return [
         {
             description: 'walkDir - playground - no options',
             result: walkDir({fromPath: 'playground'}).sort(),
@@ -69,8 +69,4 @@ export function walkDirTest() {
             ].sort()
         },
     ];
-
-    fs.rmSync('./playground', {recursive: true});
-
-    return tests;
 }

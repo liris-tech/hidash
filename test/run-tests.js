@@ -13,6 +13,8 @@ import { walkDirTest } from './walkDir.test.js';
 
 import _ from 'lodash';
 
+import fs from 'node:fs';
+
 // =====================================================================================================================
 
 const functionsToTest = [diffTest, selectLinesTest, makeFileStructureTest, isDirTest, isSymbolicLinkTest,
@@ -36,6 +38,7 @@ export function runTests() {
                     expected
                 });
             }
+            cleanUpTestDir();
         }
     }
 
@@ -54,6 +57,22 @@ export function runTests() {
             console.log(`--- expected result: ${JSON.stringify(test.expected)}`);
         }
     }
+
+    const nTestPassed = _.sumBy(allTests, {passes: true});
+    if (nTestPassed === allTests.length) {
+        console.log(`\nAll tests passed (${nTestPassed}/${allTests.length})`);
+    }
+    else {
+        console.log(`\nSOME TESTS FAILED (${allTests.length-nTestPassed}/${allTests.length})`);
+    }
 }
+
+
+function cleanUpTestDir() {
+    if (fs.existsSync('./playground')) {
+        fs.rmSync('./playground', {recursive: true});
+    }
+}
+
 
 runTests();
