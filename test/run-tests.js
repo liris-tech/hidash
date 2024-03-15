@@ -1,3 +1,8 @@
+import { fromWONTest } from './fromWON.test.js';
+import { isValidWONTest } from './isValidWON.test.js';
+
+import { mapLeavesTest } from './mapLeaves.test.js';
+
 import { diffTest } from './diff.test.js';
 
 import { selectLinesTest } from './selectLines.test.js';
@@ -12,14 +17,18 @@ import { mkdirIfNotExistsTest} from './mkdirIfNotExists.test.js';
 import { rmdirIfEmptyTest } from './rmdirIfEmpty.test.js';
 import { walkDirTest } from './walkDir.test.js';
 
+import { isObjectOrArrayTest } from './isObjectOrArray.test.js';
+import { isObjectTest } from'./isObject.test.js';
+
 import _ from 'lodash';
 
 import fs from 'node:fs';
 
 // =====================================================================================================================
 
-const functionsToTest = [diffTest, selectLinesTest, makeFileStructureTest, matchesFileStructureTest, isDirTest,
-    isSymbolicLinkTest, getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest, rmdirIfEmptyTest, walkDirTest];
+const functionsToTest = [fromWONTest, isValidWONTest, mapLeavesTest, diffTest, selectLinesTest, makeFileStructureTest,
+    matchesFileStructureTest, isDirTest, isSymbolicLinkTest, getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest,
+    rmdirIfEmptyTest, walkDirTest, isObjectOrArrayTest, isObjectTest];
 
 export function runTests() {
     const allTests = [];
