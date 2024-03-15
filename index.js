@@ -1,4 +1,9 @@
+import { fromWON } from './src/fromWON.js';
+import { isValidWON } from './src/isValidWON.js';
+
 import { diff } from './src/diff.js';
+
+import { mapLeaves } from './src/mapLeaves.js';
 
 import { selectLines } from './src/selectLines.js';
 
@@ -12,8 +17,16 @@ import { mkdirIfNotExists } from './src/mkdirIfNotExists.js';
 import { rmdirIfEmpty } from './src/rmdirIfEmpty.js';
 import { walkDir } from './src/walkDir.js';
 
+import { isObjectOrArray, isNotObjectOrArray } from './src/isObjectOrArray.js';
+import { isObject, isNotObject } from './src/isObject.js';
+
 
 export {
+    fromWON,
+    isValidWON,
+
+    mapLeaves,
+
     diff,
 
     selectLines,
@@ -26,5 +39,10 @@ export {
     isDirEmpty,
     mkdirIfNotExists,
     rmdirIfEmpty,
-    walkDir
+    walkDir,
+
+    isObjectOrArray,
+    isNotObjectOrArray,
+    isObject,
+    isNotObject
 };
