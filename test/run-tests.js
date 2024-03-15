@@ -23,6 +23,7 @@ import { isObjectTest } from'./isObject.test.js';
 import _ from 'lodash';
 
 import fs from 'node:fs';
+import process from 'node:process';
 
 // =====================================================================================================================
 
@@ -30,7 +31,8 @@ const functionsToTest = [fromWONTest, isValidWONTest, mapLeavesTest, diffTest, s
     matchesFileStructureTest, isDirTest, isSymbolicLinkTest, getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest,
     rmdirIfEmptyTest, walkDirTest, isObjectOrArrayTest, isObjectTest];
 
-export function runTests() {
+
+export function runTests(verbose) {
     const allTests = [];
 
     for (const test of functionsToTest) {
@@ -52,9 +54,10 @@ export function runTests() {
         }
     }
 
-    const descriptionMaxLength = _(allTests).map(t => t.description.length).max();
+    const loggedTests = verbose ? allTests : allTests.filter(test => !test.passes);
+    const descriptionMaxLength = _(loggedTests).map(t => t.description.length).max();
 
-    for (const test of allTests) {
+    for (const test of loggedTests) {
         const nDashes = descriptionMaxLength - test.description.length + 10;
         const dashes = _.repeat('-', nDashes);
 
@@ -64,7 +67,7 @@ export function runTests() {
         else {
             console.log(`${test.description}: ${dashes} FAILS`);
             console.log(`--- result: ${JSON.stringify(test.result)}`);
-            console.log(`--- expected result: ${JSON.stringify(test.expected)}`);
+            console.log(`--- expected: ${JSON.stringify(test.expected)}`);
         }
     }
 
@@ -84,5 +87,5 @@ function cleanUpTestDir() {
     }
 }
 
-
-runTests();
+const verbose = process.argv.includes('verbose');
+runTests(verbose);
