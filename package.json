@@ -1,7 +1,7 @@
 {
   "name": "@liris-tech/hidash",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "High-level equivalent to lodash.",
   "scripts": {
     "test": "node test/run-tests.js"
