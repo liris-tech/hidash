@@ -5,6 +5,7 @@ import { containsKeyDeep } from './src/containsKeyDeep.js';
 import { diff } from './src/diff.js';
 
 import { mapLeaves } from './src/mapLeaves.js';
+import { transformLeaves } from './src/transformLeaves.js';
 
 import { selectLines } from './src/selectLines.js';
 
@@ -28,6 +29,7 @@ export {
     containsKeyDeep,
 
     mapLeaves,
+    transformLeaves,
 
     diff,
 
