@@ -1,5 +1,6 @@
 import { fromWON } from './src/fromWON.js';
 import { isValidWON } from './src/isValidWON.js';
+import { containsKeyDeep } from './src/containsKeyDeep.js';
 
 import { diff } from './src/diff.js';
 
@@ -24,6 +25,7 @@ import { isObject, isNotObject } from './src/isObject.js';
 export {
     fromWON,
     isValidWON,
+    containsKeyDeep,
 
     mapLeaves,
 

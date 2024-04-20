@@ -1,5 +1,6 @@
 import { fromWONTest } from './fromWON.test.js';
 import { isValidWONTest } from './isValidWON.test.js';
+import { containsKeyDeepTest } from './containsKeyDeep.test.js';
 
 import { mapLeavesTest } from './mapLeaves.test.js';
 
@@ -27,10 +28,10 @@ import process from 'node:process';
 
 // =====================================================================================================================
 
-const functionsToTest = [fromWONTest, isValidWONTest, mapLeavesTest, diffTest, selectLinesTest, makeFileStructureTest,
-    matchesFileStructureTest, isDirTest, isSymbolicLinkTest, getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest,
-    rmdirIfEmptyTest, walkDirTest, isObjectOrArrayTest, isObjectTest];
-
+const functionsToTest = [fromWONTest, isValidWONTest, containsKeyDeepTest, mapLeavesTest, diffTest,
+    selectLinesTest, makeFileStructureTest, matchesFileStructureTest, isDirTest, isSymbolicLinkTest,
+    getSubDirsTest, isDirEmptyTest, mkdirIfNotExistsTest, rmdirIfEmptyTest, walkDirTest,
+    isObjectOrArrayTest, isObjectTest];
 
 export function runTests(verbose) {
     const allTests = [];
