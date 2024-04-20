@@ -5,7 +5,7 @@ import _ from 'lodash';
 // =====================================================================================================================
 
 /**
- * Recursively walks the object and applies f to each leave.
+ * Returns an array of f applied to each leave of obj.
  *
  * @since 0.2.0
  * @category Collection
@@ -16,11 +16,18 @@ import _ from 'lodash';
  * @returns {any[]} The results of applying f on each leaf.
  *
  * @example
- * isValidWON({
- *     a: {c: 1},
- *     b: {c: 1}
- * });
- * // => returns true. A standard object is also a valid WON.
+ * mapLeaves({
+ *     a: {c: {e: 1}},
+ *     b: {d: 2}
+ * }, _.identity);
+ * // => [1, 2]
+ *
+ * mapLeaves({
+ *     a: {b: 1},
+ *     c: [2, [3]]
+ * }, (value, path) => path, {isLeaf: isNotObjectOrArray});
+ * // => [['a', 'b'], ['c', '0'], ['c', '1', '0']]
+ *
  */
 export function mapLeaves(obj, f, {isLeaf=isNotObject}={}) {
     if (isLeaf(obj)) {

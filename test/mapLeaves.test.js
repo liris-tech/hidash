@@ -1,4 +1,5 @@
-import { mapLeaves } from '../src/mapLeaves.js'
+import { mapLeaves } from '../src/mapLeaves.js';
+import { isNotObjectOrArray } from '../src/isObjectOrArray.js';
 
 import _ from 'lodash';
 
@@ -29,13 +30,13 @@ export function mapLeavesTest() {
         {
             description: 'mapLeaves - {a: {b: 1}, c: [2, [3]]}, _.identity, {isLeaf: not obj or arr}',
             result: mapLeaves({a: {b: 1}, c: [2, [3]]}, _.identity,
-                {isLeaf: _.negate(v => _.isPlainObject(v) || _.isArray(v))}),
+                {isLeaf: isNotObjectOrArray}),
             expected: [1, 2, 3]
         },
         {
             description: 'mapLeaves - {a: {b: 1}, c: [2, [3]]}, (value, path) => path, {isLeaf: not obj or arr}',
             result: mapLeaves({a: {b: 1}, c: [2, [3]]}, (value, path) => path,
-                {isLeaf: _.negate(v => _.isPlainObject(v) || _.isArray(v))}),
+                {isLeaf: isNotObjectOrArray}),
             expected: [['a', 'b'], ['c', '0'], ['c', '1', '0']]
         },
     ];
